@@ -43,3 +43,17 @@
  
  # legal types of predictions to make
  # on a set of rasters
+diff --git a/src/deepbiosphere/Download_GBIF_Data.py b/src/deepbiosphere/Download_GBIF_Data.py
+index cb10f92..e83411f 100644
+--- a/src/deepbiosphere/Download_GBIF_Data.py
++++ b/src/deepbiosphere/Download_GBIF_Data.py
+@@ -250,7 +250,7 @@ if __name__ == "__main__":
+     args.add_argument('--organism', type=str, required=True, help='What organism/s to download', choices=['bacteria', 'plant','animal','plantanimal'])
+     args.add_argument('--start_date', type=str, help='Collect observations on and after this year', default='2015')
+     args.add_argument('--end_date', type=str, help='Collect observations on and before this year', default='2022')
+-    args.add_argument('--area', type=str, help='GADM area code for where observations should be taken from', default=['USA.5_1'])
++    args.add_argument('--area', type=str, nargs='+', help='GADM area code for where observations should be taken from', default=['USA.5_1'])
+     args, _ = args.parse_known_args()
+     
+     request_gbif_records(args.gbif_user, args.gbif_email, args.organism, start_date=args.start_date, end_date=args.end_date, area=args.area)
+\ No newline at end of file
