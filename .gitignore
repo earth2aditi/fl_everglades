@@ -1,0 +1,45 @@
+# ---- data: everything under data/ is ignored except a few small outputs ----
+# (raw data is reproducible from the scripts; cite the GBIF download instead)
+/data/**
+!/data/
+!/data/occurrences/
+!/data/occurrences/fl_species_min200.json
+!/data/results/
+!/data/results/label_summary_fl/
+!/data/results/label_summary_fl/*.html
+!/data/results/label_summary_fl/*.png
+!/data/results/label_summary_fl/*.csv
+!/data/results/label_summary_fl/*.json
+!/data/results/label_summary_fl/*.md
+!/data/results/figures_fl/
+!/data/results/figures_fl/*.png
+!/data/results/figures_fl/*.pdf
+
+# ---- upstream code: kept as a patch in patches/, not vendored ----
+/Deepbiosphere/
+
+# ---- local tooling, logs, backups ----
+/tools/
+/logs/
+*.bak
+*.ca_orig
+core.*
+slurm-*.out
+
+# ---- python / editors ----
+__pycache__/
+*.pyc
+*.egg-info/
+.ipynb_checkpoints/
+.DS_Store
+
+# ---- never commit imagery or big rasters even if they land outside data/ ----
+*.tif
+*.tiff
+*.zip
+*.parquet
+
+# ---- local installs / caches ----
+/miniforge3/
+/pip_cache/
+/tmp/

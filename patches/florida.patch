@@ -1,0 +1,45 @@
+--- a/src/deepbiosphere/Build_Data.py
++++ b/src/deepbiosphere/Build_Data.py
+@@ -790,10 +790,10 @@
+     return daset
+ 
+ # Basically copying code from below that returns back just the polygons for visualization
+-def generate_split_polygons(lonmin=-125,
+-                            lonmax=-114,
+-                            latmin=32,
+-                            latmax=42.1,
++def generate_split_polygons(lonmin=-88,
++                            lonmax=-79.5,
++                            latmin=24,
++                            latmax=31.1,
+                            bandwidth=1):
+     # these are a box around california
+     # leaves a bit of a buffer around
+@@ -832,10 +832,10 @@
+ 
+ # make bands and exclusion zones
+ def make_spatial_split(daset, latCol,
+-                       lonmin=-125,
+-                       lonmax=-114,
+-                       latmin=32,
+-                       latmax=42.1,
++                       lonmin=-88,
++                       lonmax=-79.5,
++                       latmin=24,
++                       latmax=31.1,
+                        bandwidth=1):
+     # first, make sure we're in the right crs
+     daset = daset.to_crs(naip.CRS.GBIF_CRS)
+--- a/src/deepbiosphere/NAIP_Utils.py
++++ b/src/deepbiosphere/NAIP_Utils.py
+@@ -49,8 +49,8 @@
+ CRS = SimpleNamespace(
+     GBIF_CRS = 'EPSG:4326',
+     BIOCLIM_CRS ='EPSG:4326',
+-    NAIP_CRS_1 = 'EPSG:26911',
+-    NAIP_CRS_2 = 'EPSG:26910')
++    NAIP_CRS_1 = 'EPSG:26917',
++    NAIP_CRS_2 = 'EPSG:26917')
+ 
+ # legal types of predictions to make
+ # on a set of rasters
